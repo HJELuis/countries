@@ -1,0 +1,23 @@
+%flexLayout {
+    display: flex;
+    justify-content: space-between;
+}
+
+body {
+    margin: 2em;
+}
+
+.countries {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    column-gap: 20px;
+    .country {
+        @extend %flexLayout;
+        align-items: center;
+        padding: 3px;        
+        .country__info {
+            flex-basis: 80%;
+        }       
+    }
+}
+
