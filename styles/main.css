@@ -12,6 +12,7 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   -moz-column-gap: 20px;
        column-gap: 20px;
+  row-gap: 20px;
 }
 .countries .country {
   align-items: center;
@@ -22,11 +23,11 @@ body {
 }
 
 .countries .country {
-  border: solid 1px #3d3d3d;
-  box-shadow: 3px 3px 2px black;
+  border: solid 1px #f1f0f0;
+  box-shadow: 1px 2px 15px black;
   background-color: #f1f0f0;
 }
 
-.country__flag img {
+.country__flag .country__img {
   width: 100%;
 }/*# sourceMappingURL=main.css.map */
