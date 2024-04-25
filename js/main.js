@@ -47,6 +47,7 @@ const loadCountries = async () => {
     try {
         const response = await axios.get("https://restcountries.com/v3.1/all");    
         const countries = response.data;
+        countryGrid.innerHTML = "";
 
         for(countrie of countries) {
            const card = createCard(countrie);
@@ -61,8 +62,38 @@ const loadCountries = async () => {
 
 document.addEventListener("DOMContentLoaded", loadCountries);
 
+const searchCountry = async () => {
+    const countryName = document.getElementById("search__input").value.toLowerCase(); 
+    const countryGrid = document.querySelector(".countries");    
+    try {
+        const countryResponse = await axios.get(`https://restcountries.com/v3.1/name/${countryName}`);
+        console.log(countryResponse);
+        const countries = countryResponse.data;
+        countryGrid.innerHTML = "";    
+        for(country of countries) {
+            const card = createCard(country);
+            countryGrid.appendChild(card);    
+        }            
+            
+    }catch(error) {
+        console.log("Error: ", error);
+    }
+};
 
+document.querySelector(".search__button").addEventListener("click", searchCountry);
+document.getElementById("search__input").addEventListener("keypress", key => {
+    if(key.code == "Enter") {
+        searchCountry();
+    }
+});
 
+document.getElementById("search__input").addEventListener("keydown", key => {
+    if(key.code == "Backspace") {
+        loadCountries();
+    }
+})
+
+document.querySelector("h1").addEventListener("click", loadCountries);
 
 
 

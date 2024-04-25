@@ -40,6 +40,7 @@ body header h1 {
   text-align: center;
   line-height: 2em;
   color: #DDDDDD;
+  cursor: pointer;
 }
 body .countries .country {
   border: solid 1px #DDDDDD;
