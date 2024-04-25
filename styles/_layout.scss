@@ -5,20 +5,30 @@
 
 body {
     margin: 2em;
-}
-
-.countries {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    column-gap: 20px;
-    row-gap: 20px;
-    .country {
-        @extend %flexLayout;
-        align-items: center;
-        padding: 3px;        
-        .country__info {
-            flex-basis: 80%;
-        }       
+    header{
+        h1 {
+            margin: 0;
+        }
+    }
+    .search {
+        margin: 3rem;
+        display: flex;
+        justify-content: center;
+    }
+    .countries {
+        margin: 0 3rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        column-gap: 20px;
+        row-gap: 20px;
+        .country {
+            @extend %flexLayout;
+            align-items: center;
+            padding: 3px;        
+            .country__info {
+                flex-basis: 80%;
+            }       
+        }
     }
 }
 
