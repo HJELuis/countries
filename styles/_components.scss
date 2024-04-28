@@ -3,7 +3,7 @@ $componentsColor: #76885B;
 
 .search {
     #search__input {
-        border: solid 1px #f1f0f0;
+        border: solid 1px #f1f0f0;        
         &:focus {
             outline: none;
             border-color: $componentsColor;

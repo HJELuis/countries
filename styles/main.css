@@ -22,6 +22,11 @@ body .countries, body header .countries, body header header .countries {
        column-gap: 20px;
   row-gap: 20px;
 }
+@media (max-width: 500px) {
+  body .countries, body header .countries, body header header .countries {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
 body .countries .country {
   align-items: center;
   padding: 3px;
